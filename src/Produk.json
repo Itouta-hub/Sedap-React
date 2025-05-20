@@ -1,0 +1,37 @@
+[
+  {
+    "kode_produk": "Ayam Geprek",
+    "nama_produk": "Ayam Geprek",
+    "harga": 55000,
+    "image": "/img/AyamBkr.png",
+    "stok": 5
+  },
+  {
+    "kode_produk": "Sate Ayam",
+    "nama_produk": "Sate Ayam",
+    "harga": 20000,
+    "image": "/img/Sate-Ayam.png",
+    "stok": 1
+  },
+  {
+    "kode_produk": "Nasi Goreng Kampung",
+    "nama_produk": "Nasi Goreng Kampung",
+    "harga": 18000,
+    "image": "/img/nasiGoreng.png",
+    "stok": 10
+  },
+  {
+    "kode_produk": "Bakso Beranak",
+    "nama_produk": "Bakso Beranak",
+    "harga": 22000,
+    "image": "/img/baksoBeranak.jpg",
+    "stok": 0
+  },
+  {
+    "kode_produk": "Rendang",
+    "nama_produk": "Rendang",
+    "harga": 42000,
+    "image": "/img/Rendang.png",
+    "stok": 8
+  }
+]

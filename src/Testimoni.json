@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Andi",
+    "avatar": "/img/Ava1.png",
+    "review": "Makanannya enak banget! Rasanya kaya masakan ibu saya di rumah.",
+    "rating": 5
+  },
+  {
+    "name": "Siti",
+    "avatar": "/img/AvaF1.png",
+    "review": "Cepat, murah, dan yang paling penting: enak!",
+    "rating": 4
+  },
+  {
+    "name": "Budi",
+    "avatar": "/img/AvaM2.png",
+    "review": "Aplikasi Sedap bikin hidup saya lebih gampang waktu lapar malam-malam.",
+    "rating": 5
+  },
+  {
+    "name": "Rina",
+    "avatar": "/img/AvaF2.png",
+    "review": "Desain aplikasinya simpel dan makanan yang tersedia banyak pilihan.",
+    "rating": 4
+  },
+  {
+    "name": "Joko",
+    "avatar": "/img/AvaM3.png",
+    "review": "Suka banget sama fitur pesan instannya, tinggal klik langsung datang.",
+    "rating": 5
+  }
+]
