@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import products from '../../produk.json';
+import products from '../../Produk.json';
 
 function formatRupiah(number) {
   return new Intl.NumberFormat('id-ID', {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import produkData from '../../produk.json';
+import produkData from '../../Produk.json';
 
 export default function CekKetersediaan () {
     const [kodeProduk, setKodeProduk] = useState('');
