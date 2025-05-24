@@ -10,6 +10,7 @@ export default function GuestLayout() {
             <NavBar />
             <main className="flex-grow">
                 <Outlet />
+                
             </main>
             <Footer />
         </div>

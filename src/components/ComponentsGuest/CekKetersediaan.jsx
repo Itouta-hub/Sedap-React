@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import produkData from '../../produk.json';
 
-const CekKetersediaan = () => {
+export default function CekKetersediaan () {
     const [kodeProduk, setKodeProduk] = useState('');
     const [result, setResult] = useState(null);
 
@@ -55,20 +55,20 @@ const CekKetersediaan = () => {
                     🔍 Cek Ketersediaan Produk
                 </h2>
                 <p className="text-center text-gray-500 mb-8">
-                    Masukkan kode produk untuk melihat apakah produk tersedia dan berapa stok yang masih ada.
-                </p>
-                <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 items-center justify-center">
-                    <input
-                        type="text"
-                        placeholder="Contoh: Rendang"
-                        value={kodeProduk}
-                        onChange={(e) => setKodeProduk(e.target.value)}
-                        className="w-full md:w-2/3 border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <button
-                        type="submit"
-                        className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-xl hover:bg-blue-700 transition duration-300"
-                    >
+                        Masukkan kode produk untuk melihat apakah produk tersedia dan berapa stok yang masih ada.
+                    </p>
+                    <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 items-center justify-center">
+                        <input
+                            type="text"
+                            placeholder="Contoh: Rendang"
+                            value={kodeProduk}
+                            onChange={(e) => setKodeProduk(e.target.value)}
+                            className="w-full md:w-2/3 border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                        <button
+                            type="submit"
+                            className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-xl hover:bg-blue-700 transition duration-300"
+                        >
                         Cek
                     </button>
                 </form>
@@ -79,8 +79,7 @@ const CekKetersediaan = () => {
                 )}
             </div>
         </div>
-
     );
 };
 
-export default CekKetersediaan;
+

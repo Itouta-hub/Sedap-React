@@ -30,7 +30,7 @@ export default function Testimoni() {
           {testimoni.map((user, index) => (
             <motion.div
               key={index}
-              className="bg-green-100 rounded-xl p-6 shadow hover:shadow-md transition text-left"
+              className="bg-orange-100 rounded-xl p-6 shadow hover:shadow-md transition text-left"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}

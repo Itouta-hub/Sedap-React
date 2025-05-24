@@ -42,7 +42,5 @@
 }
 
 body {
-    @apply font-barlow;
-    @apply font-RethinkSans-Regular;
     @apply font-RethinkSans-ExtraBold;
 }
