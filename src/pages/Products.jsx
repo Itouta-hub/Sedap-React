@@ -6,7 +6,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
+//holla
 export default function Products() {
     const breadcrumb = ["Dashboard", "Product List"]
 
@@ -30,7 +30,7 @@ export default function Products() {
             })
         }, 500); // 500ms debounce
         return () => clearTimeout(timeout); // cleanup
-    }, [query]) // <- array kosong artinya hanya dijalankan sekali setelah di-render
+    }, [query]) // <- array kosong artinya hanya dijalankan sekali setelah di-render.
     
     const errorInfo = error ? (
 		    <div className="bg-red-200 mb-5 p-5 text-sm font-light text-gray-600 rounded flex items-center">
