@@ -5,6 +5,7 @@ import { BsPeople } from "react-icons/bs";
 import { BiErrorAlt } from "react-icons/bi"; 
 import { CgUnavailable } from "react-icons/cg"; 
 import { RiForbid2Line } from "react-icons/ri"; 
+import { MdFastfood } from "react-icons/md"; 
 import { NavLink } from "react-router-dom";
 
 export default function ListMenu() {
@@ -59,6 +60,16 @@ export default function ListMenu() {
           <NavLink id="menu-7" to="/ListUser" className={menuClass}>
             <RiFileUserLine className="mr-2 text-xl" />
             List User
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+                  id="menu-8"
+                  to="/products"
+                  className={menuClass}
+              >
+                  <MdFastfood className="mr-4 text-xl" />
+                  Products
           </NavLink>
         </li>
       </ul>
