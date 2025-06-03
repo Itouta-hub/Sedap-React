@@ -1,4 +1,4 @@
-import { AiFillDelete } from "react-icons/ai"; 
+import { AiFillDelete, AiFillEdit } from "react-icons/ai"; 
 import { notesAPI } from "../services/notesAPI"
 import { useState } from "react"
 import AlertBox from "../components/AlertBox"
@@ -17,6 +17,8 @@ export default function Notes() {
     })
 
     const [notes, setNotes] = useState([])
+    const [editingNote, setEditingNote] = useState(null)
+
 
     // Handle perubahan nilai input form
     const handleChange = (evt) => {
@@ -56,6 +58,7 @@ export default function Notes() {
         }
     }
 
+    //Load daftar catatan
     useEffect(() => {
         loadNotes()
     }, [])
@@ -74,7 +77,7 @@ export default function Notes() {
         }
     }
 
-    // Handle untuk aksi hapus data
+    // Handle untuk aksi hapus catatan
     const handleDelete = async (id) => {
         const konfirmasi = confirm("Yakin ingin menghapus catatan ini?")
         if (!konfirmasi) return
@@ -95,6 +98,48 @@ export default function Notes() {
         }
     }
 
+    // Handle klik edit: isi form dan set editingNote
+    const handleEdit = (note) => {
+        setEditingNote(note)
+        setDataForm({ title: note.title, content: note.content, status: note.status || "" })
+        setError("")
+        setSuccess("")
+    }
+
+        // Handle update catatan
+    const handleUpdate = async (e) => {
+        e.preventDefault()
+        if (!editingNote) return
+
+        try {
+            setLoading(true)
+            setError("")
+            setSuccess("")
+
+            await notesAPI.updateNote(editingNote.id, dataForm)
+
+            setSuccess("Catatan berhasil diperbarui!")
+            setEditingNote(null)
+            setDataForm({ title: "", content: "", status: "" })
+
+            setTimeout(() => setSuccess(""), 3000)
+
+            loadNotes()
+        } catch (err) {
+            setError(`Terjadi kesalahan: ${err.message}`)
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    // Handle batal edit (optional)
+    const handleCancelEdit = () => {
+        setEditingNote(null)
+        setDataForm({ title: "", content: "", status: "" })
+        setError("")
+        setSuccess("")
+    }
+
 	return (
         <div className="max-w-2xl mx-auto p-6">
             <div className="mb-6">
@@ -113,7 +158,7 @@ export default function Notes() {
         
                 {success && <AlertBox type="success">{success}</AlertBox>}
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={editingNote ? handleUpdate : handleSubmit} className="space-y-4">
                     <input
                         type="text"
                         name="title"
@@ -147,8 +192,18 @@ export default function Notes() {
                             focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed
                             transition-all duration-200 shadow-lg"
                     >
-                        {loading ? "Mohon Tunggu..." : "Tambah Catatan"}
+                        {loading ? "Mohon Tunggu..." : editingNote ? "Simpan Perubahan" : "Tambah Catatan"}
                     </button>
+                    {editingNote && (
+                        <button
+                            type="button"
+                            onClick={handleCancelEdit}
+                            className="ml-3 px-6 py-3 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold
+                                rounded-2xl transition-all duration-200 shadow-lg"
+                        >
+                            Batal Edit
+                        </button>
+                    )}
                 </form>
             </div>
 
@@ -191,13 +246,21 @@ export default function Notes() {
                                 </td>
                                 <td className="px-6 py-4 max-w-xs">
                                     <div className="truncate text-gray-600">
+                                        {/* Delete */}
                                         <button
                                             onClick={() => handleDelete(note.id)}
                                             disabled={loading}
                                         >
                                             <AiFillDelete className="text-red-400 text-2xl hover:text-red-600 transition-colors" />
                                         </button>
-                                    </div>
+                                        {/* Edit */}
+                                        <button
+                                        onClick={() => handleEdit(note)}
+                                        disabled={loading}
+                                    >
+                                        <AiFillEdit className="text-green-500 text-2xl hover:text-green-700 transition-colors" />
+                                    </button>
+                                    </div> 
                                 </td>
                             </>
                         )}

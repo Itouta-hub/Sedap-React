@@ -1,3 +1,4 @@
+import { CgNotes } from "react-icons/cg"; 
 import { RiFileUserLine } from "react-icons/ri"; 
 import { SlBasket } from "react-icons/sl";
 import { RiDashboardLine } from "react-icons/ri";
@@ -78,7 +79,7 @@ export default function ListMenu() {
                   to="/notes"
                   className={menuClass}
               >
-                  <MdFastfood className="mr-4 text-xl" />
+                  <CgNotes className="mr-4 text-xl" />
                   Notes
           </NavLink>
         </li>
