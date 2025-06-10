@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/** Tambahkan Ini **/
+@plugin "daisyui" {
+    themes: light --default, dark --prefersdark, cupcake, caramellatte;
+}
+
 @font-face {
     font-family: 'Barlow'; 
     src: url(../../public/fonts/Barlow-Regular.ttf);

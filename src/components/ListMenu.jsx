@@ -40,24 +40,6 @@ export default function ListMenu() {
           </NavLink>
         </li>
         <li>
-          <NavLink id="menu-4" to="/400" className={menuClass}>
-            <BiErrorAlt className="mr-2 text-xl" />
-            Error 400
-          </NavLink>
-        </li>
-        <li>
-          <NavLink id="menu-6" to="/401" className={menuClass}>
-            <CgUnavailable className="mr-2 text-xl" />
-            Error 401
-          </NavLink>
-        </li>
-        <li>
-          <NavLink id="menu-6" to="/403" className={menuClass}>
-            <RiForbid2Line className="mr-2 text-xl" />
-            Error 403
-          </NavLink>
-        </li>
-        <li>
           <NavLink id="menu-7" to="/ListUser" className={menuClass}>
             <RiFileUserLine className="mr-2 text-xl" />
             List User
@@ -81,6 +63,24 @@ export default function ListMenu() {
               >
                   <CgNotes className="mr-4 text-xl" />
                   Notes
+          </NavLink>
+        </li>
+        <li>
+          <NavLink id="menu-4" to="/400" className={menuClass}>
+            <BiErrorAlt className="mr-2 text-xl" />
+            Error 400
+          </NavLink>
+        </li>
+        <li>
+          <NavLink id="menu-6" to="/401" className={menuClass}>
+            <CgUnavailable className="mr-2 text-xl" />
+            Error 401
+          </NavLink>
+        </li>
+        <li>
+          <NavLink id="menu-6" to="/403" className={menuClass}>
+            <RiForbid2Line className="mr-2 text-xl" />
+            Error 403
           </NavLink>
         </li>
       </ul>
